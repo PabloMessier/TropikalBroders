@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tropikal Broders</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="https://soundcloud.com/tropikalbroders" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="SoundCloud">
+                <i data-feather="cloud"></i>
+            </a>
+            <a href="https://www.youtube.com/channel/UCJtnEDbEFGnZ86gc3EoVuOw" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="YouTube">
+                <i data-feather="youtube"></i>
+            </a>
+            <a href="https://www.mixcloud.com/TropikalBroders/" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="Mixcloud">
+                <i data-feather="music"></i>
+            </a>
+            <a href="https://x.com/TropikalBroders" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="X (Twitter)">
+                <i data-feather="twitter"></i>
+            </a>
+            <a href="https://www.instagram.com/tropikalbroders/" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="Instagram">
+                <i data-feather="instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/TropikalBrodersCo" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="Facebook">
+                <i data-feather="facebook"></i>
+            </a>
+            <a href="https://tropikalbroders.bandcamp.com/music" target="_blank" rel="noopener noreferrer" class="nav-link" aria-label="Bandcamp">
+                <i data-feather="disc"></i>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <img src="images/main_logo/logo.jpg" alt="Tropikal Broders Logo" class="logo">
+            <h1>Tropikal Broders</h1>
+        </header>
+
+        <main>
+            <blockquote>
+                "Tropikal Broders es la evolución de la música afro caribeña y tropical. 
+                Una explosión de bajos electrónicos seguidos de melodías y ritmos multiétnicos 
+                diseñados para sacudir cuerpos, trastocar mentes y engrandecer el espíritu."
+            </blockquote>
+            <div class="carousel-container">
+                <div class="carousel-image-wrapper" id="carousel-wrapper" data-folder="images/carousel">
+                    <div class="loading-indicator">Cargando imágenes...</div>
+                </div>
+                <div class="carousel-dots" id="carousel-dots"></div>
+            </div>
+            
+            <section class="gallery-sections">
+                <div class="galeria-section">
+                    <h2>Galería</h2>
+                    <div class="gallery-carousel-container">
+                        <button class="gallery-nav-btn prev" id="gallery-prev">
+                            <i data-feather="chevron-left"></i>
+                        </button>
+                        <div class="gallery-carousel-wrapper" id="gallery-carousel" data-folder="images/gallery">
+                            <div class="loading-indicator">Cargando galería...</div>
+                        </div>
+                        <button class="gallery-nav-btn next" id="gallery-next">
+                            <i data-feather="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="presentaciones-section">
+                    <h2>Presentaciones</h2>
+                    <div class="gallery-carousel-container">
+                        <button class="gallery-nav-btn prev" id="presentaciones-prev">
+                            <i data-feather="chevron-left"></i>
+                        </button>
+                        <div class="presentaciones-carousel-wrapper" id="presentaciones-carousel" data-folder="images/presentaciones">
+                            <div class="loading-indicator">Cargando presentaciones...</div>
+                        </div>
+                        <button class="gallery-nav-btn next" id="presentaciones-next">
+                            <i data-feather="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="gallery-section">
+                <h2>Streaming & Música</h2>
+                <div class="gallery-grid" id="streaming-grid" data-folder="images/streaming_music">
+                    <div class="loading-indicator">Cargando música...</div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <a href="#" class="back-to-top" aria-label="Volver arriba">
+                <i data-feather="arrow-up"></i>
+                <span>Volver arriba</span>
+            </a>
+        </footer>
+    </div>
+
+    <!-- Lightbox Structure -->
+    <div class="lightbox">
+        <button class="lightbox-close" aria-label="Close lightbox">
+            <i data-feather="x"></i>
+        </button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-nav">
+                <button class="lightbox-button prev" aria-label="Previous image">
+                    <i data-feather="chevron-left"></i>
+                </button>
+                <button class="lightbox-button next" aria-label="Next image">
+                    <i data-feather="chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
