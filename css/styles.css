@@ -329,7 +329,7 @@ blockquote::after {
     display: grid;
     grid-template-columns: minmax(400px, 1fr) minmax(400px, 1fr) minmax(400px, 1fr);
     gap: 1rem;
-    max-width: none;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1rem;
@@ -582,7 +582,7 @@ html {
     display: grid;
     grid-template-columns: minmax(500px, 1fr) minmax(500px, 1fr);
     gap: 2rem;
-    max-width: 1800px;
+    max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding: 0 1rem;
@@ -739,9 +739,8 @@ html {
     grid-template-columns: minmax(800px, 3fr) 300px;
     gap: 1.5rem;
     align-items: start;
-    max-width: 1800px;
+    max-width: 1200px;
     margin: 0 auto;
-    transform: translateX(-75px);
 }
 
 .video-container {
@@ -859,8 +858,7 @@ html {
 @media (max-width: 1200px) {
     .video-player-container {
         grid-template-columns: minmax(600px, 2fr) 280px;
-        max-width: 1400px;
-        transform: translateX(-50px);
+        max-width: 1200px;
     }
 }
 
@@ -1004,7 +1002,7 @@ html {
     .media-sections {
         grid-template-columns: 1fr;
         gap: 2rem;
-        max-width: 800px;
+        max-width: 1200px;
     }
     
     .streaming-section,
