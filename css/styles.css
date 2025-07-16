@@ -736,7 +736,7 @@ html {
 
 .video-player-container {
     display: grid;
-    grid-template-columns: minmax(800px, 3fr) 300px;
+    grid-template-columns: 2fr 1fr;
     gap: 1.5rem;
     align-items: start;
     max-width: 1200px;
@@ -857,7 +857,7 @@ html {
 /* Responsive video layout */
 @media (max-width: 1200px) {
     .video-player-container {
-        grid-template-columns: minmax(600px, 2fr) 280px;
+        grid-template-columns: 2fr 1fr;
         max-width: 1200px;
     }
 }
