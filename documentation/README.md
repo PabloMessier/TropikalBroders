@@ -13,14 +13,26 @@ TropikalBroders/
 ├── css/
 │   └── styles.css              # 70s-inspired styling with modern design
 ├── js/
-│   └── script.js               # Dynamic image loading and gallery functionality
+│   └── script.js               # Dynamic image loading, gallery, and audio functionality
 ├── images/
 │   ├── carousel/               # Main carousel images (carousel01.jpg - carousel17.jpg)
 │   ├── gallery/                # Gallery section images (gallery01.jpg - gallery49.jpg)
+│   ├── donde_jose/             # Donde José section images (party1.jpg - party58.jpg)
 │   ├── presentaciones/         # Presentations section (presentation01.jpg - presentation44.jpg)
 │   ├── streaming_music/        # Streaming section (streaming01.jpg - streaming06.jpg)
 │   ├── main_logo/              # Logo files
 │   └── bg-tropical.jpg         # Background image
+├── music/                      # Artist's musical works (8 WAV files)
+│   ├── Amanze-arn4l2 ft Tropikal.wav
+│   ├── Lido Pimienta - Eso Que Tu Haces (Tropikal Broders & Pablo Messier Remix).wav
+│   ├── Pablo Messier - Lavoe.wav
+│   ├── Tropikal Broders & Pablo Messier - Cumbia.wav
+│   ├── Tropikal Broders & Pablo Messier - El Espeluque.wav
+│   ├── Tropikal Broders & Pablo Messier - Mambo Bado.wav
+│   ├── Tropikal Broders - Amazonas.wav
+│   └── Tropikal Broders - Ethnic.wav
+├── video/                      # Video content
+│   └── tropical.mp4            # Main promotional video
 ├── documentation/
 │   ├── README.md               # This file
 │   └── s3-optimization.md      # S3 performance guide
@@ -63,17 +75,20 @@ TropikalBroders/
 ### 2. Image Sections
 - **Main Carousel**: Auto-advancing slideshow with navigation dots
 - **Gallery**: Manual navigation carousel with prev/next buttons (✅ Fixed navigation & lightbox sync)
+- **Donde José**: Party images carousel with navigation controls (✅ New section added)
 - **Presentaciones**: Presentation slides with navigation controls (✅ Verified working)
 - **Streaming**: Grid layout for music-related images (✅ Fixed lightbox navigation)
 
-Each section loads images independently from its specific subdirectory with isolated lightbox navigation:
-- **Main carousel** = `images/carousel/` (17 images)
-- **Gallery** = `images/gallery/` (49 images) 
-- **Presentaciones** = `images/presentaciones/` (44 images)
-- **Streaming & Música** = `images/streaming_music/` (6 images)
-- Complete isolation prevents cross-section conflicts and ensures proper lightbox navigation
+### 3. Media Sections
+- **Streaming & Música**: Side-by-side layout showcasing streaming platforms and music-related images
+- **Producciones (Music Player)**: Interactive audio player for artist's musical works
+  - 8 WAV audio files with clean, intuitive interface
+  - Single-track playback (only one track plays at a time)
+  - Visual track selection from playlist
+  - Transparent audio controls for clean aesthetic
+- **Video Section**: Main promotional video (tropical.mp4) with custom styling
 
-### 3. User Experience
+### 4. User Experience
 - **Touch/Swipe Support**: Mobile-friendly navigation
 - **Keyboard Navigation**: Lightbox controls (ESC, Arrow keys)
 - **Lightbox Gallery**: Full-screen image viewing
@@ -106,6 +121,40 @@ Each section loads images independently from its specific subdirectory with isol
 <div id="streaming-grid" data-folder="images/streaming_music">
     <div class="loading-indicator">Cargando música...</div>
 </div>
+
+<!-- Media sections with audio player -->
+<section class="media-sections">
+    <div class="streaming-section">
+        <h2>Streaming & Música</h2>
+        <div class="gallery-grid" id="streaming-grid">
+            <div class="loading-indicator">Cargando música...</div>
+        </div>
+    </div>
+    
+    <div class="music-player-section">
+        <h2>Producciones</h2>
+        <div class="music-player-container">
+            <div class="music-playlist" id="music-playlist">
+                <div class="loading-indicator">Cargando obras...</div>
+            </div>
+            <div class="audio-player-controls">
+                <audio id="audio-player" controls>
+                    <source src="" type="audio/wav">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Video section -->
+<section class="video-section">
+    <h2>Video</h2>
+    <video controls class="tropical-video">
+        <source src="video/tropical.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+</section>
 ```
 
 ### JavaScript Architecture
@@ -114,13 +163,21 @@ Each section loads images independently from its specific subdirectory with isol
 - **Event Handling**: Touch, click, and keyboard navigation
 - **Error Recovery**: Continues loading despite individual failures
 - **Section Isolation**: Independent loading and navigation for each gallery section
-- **Targeted Button Fixes**: Dedicated handlers for gallery navigation buttons
+- **Music Player**: Interactive audio playback with playlist management
+  - Dynamic music file loading from `/music/` directory
+  - Single-track playback control
+  - Visual track selection and highlighting
+  - Clean track name display (removes artist prefixes)
+- **Video Integration**: HTML5 video element with custom styling
 
 ### CSS Features
-- **CSS Grid & Flexbox**: Modern layout techniques
+- **CSS Grid & Flexbox**: Modern layout techniques for images and media sections
 - **Custom Properties**: Maintainable color and spacing system
 - **Media Queries**: Responsive breakpoints for all devices
 - **Animations**: Smooth transitions and hover effects
+- **Transparent Audio Controls**: Clean, minimalist music player styling
+- **Fixed Container Heights**: Consistent sizing for media sections (500px)
+- **Custom Scrollbars**: Styled overflow areas with tropical theming
 
 ## 📱 Responsive Design
 
@@ -148,14 +205,26 @@ Connected to all Tropikal Broders platforms:
 
 ## 🔄 Content Management
 
-### Adding New Images
-1. **Carousel**: Add as `carousel18.jpg`, `carousel19.jpg`, etc.
-2. **Gallery**: Add as `gallery50.jpg`, `gallery51.jpg`, etc.
-3. **Presentations**: Add as `presentation45.jpg`, `presentation46.jpg`, etc.
-4. **Streaming**: Add as `streaming07.jpg`, `streaming08.jpg`, etc.
+### Adding New Content
+1. **Images**:
+   - **Carousel**: Add as `carousel18.jpg`, `carousel19.jpg`, etc.
+   - **Gallery**: Add as `gallery50.jpg`, `gallery51.jpg`, etc.
+   - **Donde José**: Add as `party59.jpg`, `party60.jpg`, etc. (no zero-padding)
+   - **Presentations**: Add as `presentation45.jpg`, `presentation46.jpg`, etc.
+   - **Streaming**: Add as `streaming07.jpg`, `streaming08.jpg`, etc.
+
+2. **Music**:
+   - Add WAV files to `/music/` directory
+   - Files automatically discovered and added to playlist
+   - Recommended naming: `Artist - Track Title.wav`
+
+3. **Video**:
+   - Replace `video/tropical.mp4` or add additional video files
+   - Update HTML to reference new video files if needed
 
 ### Naming Convention
-- Sequential numbering with zero-padding: `01`, `02`, `03`, etc.
+- **Standard sections**: Sequential numbering with zero-padding: `01`, `02`, `03`, etc.
+- **Donde José section**: Simple numbering without padding: `1`, `2`, `3`, etc.
 - Consistent prefixes based on section
 - JPG format for all images
 - No gaps in numbering sequence
@@ -198,6 +267,20 @@ Connected to all Tropikal Broders platforms:
 - **Complete Section Isolation**: All sections (Gallery, Presentaciones, Streaming) now use isolated lightbox navigation
 - **Directory Alignment Verified**: Each section properly loads and cycles through only its designated subdirectory
 - **🚀 Performance Optimization (Latest)**: Implemented parallel image loading to reduce S3 load times from 8-15 seconds to 3-5 seconds
+- **✨ Donde José Section Added**: New third carousel section for party images with custom naming convention (party1.jpg format)
+- **📐 Enhanced Container Sizing**: Improved gallery container dimensions with minimum 400px width for better viewing experience
+- **🎨 Logo Enhancement**: Increased logo size (22rem) and perfected circular shape without straight edges
+- **🎵 Music Player Implementation**: Added complete audio player with WAV file support
+  - Interactive playlist with 8 musical works
+  - Single-track playback limitation
+  - Clean track naming and transparent audio controls
+  - Side-by-side layout with streaming section
+- **🎬 Video Integration**: Added video section below media sections with tropical.mp4
+- **📱 Media Section Optimization**: Fixed container sizing and overflow issues
+  - Equal height containers (500px) for streaming and music sections
+  - Improved horizontal sizing with minimum 500px width
+  - Custom scrollbars for overflow content
+  - Transparent audio player styling
 
 ### Technical Implementation
 The fixes involved:
@@ -235,6 +318,20 @@ The fixes involved:
 - SEO-friendly structure
 - Complete section isolation with proper directory alignment
 - Keyboard navigation support (ESC, Arrow keys) for all lightboxes
+- **🎵 Music Player System (✅ New July 2025)**:
+  - Interactive audio playlist with 8 WAV files
+  - Single-track playback control
+  - Visual track selection and highlighting
+  - Clean track name display (artist prefixes removed)
+  - Transparent audio controls for minimalist aesthetic
+- **🎬 Video Integration (✅ New July 2025)**:
+  - HTML5 video player with tropical.mp4
+  - Custom styling matching site aesthetic
+- **📱 Media Section Layout (✅ Optimized July 2025)**:
+  - Equal-sized containers (500px height, 500px+ width)
+  - Side-by-side streaming and music sections
+  - Custom scrollbars for overflow content
+  - Responsive design for mobile devices
 
 ### Known Issues 🔧
 - Some console errors during image discovery (normal behavior for missing sequential images)
@@ -243,6 +340,7 @@ The fixes involved:
 - ~~Gallery lightbox synchronization issue~~ (✅ Fixed July 2025)
 - ~~Streaming section lightbox cycling through wrong images~~ (✅ Fixed July 2025)
 - ~~S3 slow image loading performance~~ (✅ Optimized July 2025)
+- ~~Music player overflow and container sizing~~ (✅ Fixed July 2025)
 
 ### Future Enhancements 🚀
 - WebP image format support
@@ -250,6 +348,9 @@ The fixes involved:
 - Progressive Web App features
 - Enhanced accessibility features
 - Analytics integration
+- Additional music player features (shuffle, repeat, volume control)
+- Multiple video support
+- Audio visualization effects
 
 ### S3 Performance Recommendations 🌐
 For additional performance gains beyond the JavaScript optimizations:

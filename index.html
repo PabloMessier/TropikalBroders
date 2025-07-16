@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tropikal Broders</title>
+    <meta name="description" content="Tropikal Broders: La evolución de la música afro caribeña y tropical. Una explosión de bajos electrónicos y ritmos multiétnicos.">
+    <meta name="keywords" content="Tropikal Broders, música tropical, afro caribeña, bajos electrónicos, ritmos multiétnicos">
+    <meta name="author" content="Tropikal Broders">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -70,6 +73,21 @@
                     </div>
                 </div>
                 
+                <div class="donde-jose-section">
+                    <h2>Donde José</h2>
+                    <div class="gallery-carousel-container">
+                        <button class="gallery-nav-btn prev" id="donde-jose-prev">
+                            <i data-feather="chevron-left"></i>
+                        </button>
+                        <div class="donde-jose-carousel-wrapper" id="donde-jose-carousel" data-folder="images/donde_jose">
+                            <div class="loading-indicator">Cargando donde josé...</div>
+                        </div>
+                        <button class="gallery-nav-btn next" id="donde-jose-next">
+                            <i data-feather="chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
                 <div class="presentaciones-section">
                     <h2>Presentaciones</h2>
                     <div class="gallery-carousel-container">
@@ -86,18 +104,51 @@
                 </div>
             </section>
             
-            <section class="gallery-section">
-                <h2>Streaming & Música</h2>
-                <div class="gallery-grid" id="streaming-grid" data-folder="images/streaming_music">
-                    <div class="loading-indicator">Cargando música...</div>
+            <section class="media-sections">
+                <div class="streaming-section">
+                    <h2>Streaming & Música</h2>
+                    <div class="gallery-grid" id="streaming-grid" data-folder="images/streaming_music">
+                        <div class="loading-indicator">Cargando música...</div>
+                    </div>
+                </div>
+                
+                <div class="music-player-section">
+                    <h2>Producciones</h2>
+                    <div class="music-player-container">
+                        <div class="music-playlist" id="music-playlist">
+                            <div class="loading-indicator">Cargando obras...</div>
+                        </div>
+                        <div class="audio-player-controls">
+                            <audio id="audio-player" controls>
+                                <source src="" type="audio/wav">
+                                Tu navegador no soporta el elemento de audio.
+                            </audio>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="video-section">
+                <h2>La Magia del Caribe</h2>
+                <div class="video-player-container">
+                    <div class="video-container">
+                        <video id="tropical-video" controls poster="images/bg-tropical.jpg">
+                            <source src="video/tropical.mp4" type="video/mp4">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                    <div class="video-playlist-container">
+                        <div id="video-playlist" class="video-playlist">
+                            <!-- Video playlist will be populated dynamically -->
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
 
         <footer>
-            <a href="#" class="back-to-top" aria-label="Volver arriba">
+            <a href="#" class="back-to-top" aria-label="Back to top">
                 <i data-feather="arrow-up"></i>
-                <span>Volver arriba</span>
             </a>
         </footer>
     </div>

@@ -1,0 +1,10 @@
+# Allow all search engines
+User-agent: *
+Disallow:
+
+# Block access to certain folders
+Disallow: /images/main_logo/
+Disallow: /images/logos/
+
+# Sitemap (if available)
+# Sitemap: https://yourwebsite.com/sitemap.xml
