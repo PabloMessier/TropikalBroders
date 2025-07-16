@@ -1219,13 +1219,10 @@ async function loadVideoPlaylist() {
             const videoInfo = getVideoDisplayName(filename);
             
             videoItem.innerHTML = `
-                <div class="video-thumbnail">
+                <div class="music-track-icon">
                     <i data-feather="play"></i>
                 </div>
-                <div class="video-info">
-                    <div class="video-title">${videoInfo.title}</div>
-                    <div class="video-subtitle">${videoInfo.subtitle}</div>
-                </div>
+                <div class="music-track-name">${videoInfo.title}</div>
             `;
             
             // Add click handler

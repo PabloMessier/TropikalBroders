@@ -785,8 +785,9 @@ html {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
     border: 1px solid transparent;
+    min-height: 40px;
     position: relative;
 }
 
@@ -814,17 +815,21 @@ html {
     background: var(--tropical-yellow);
 }
 
-.video-thumbnail {
-    width: 60px;
-    height: 34px;
+.music-track-icon, .video-item .music-track-icon {
+    width: 32px;
+    height: 32px;
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 3px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 0.75rem;
     flex-shrink: 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.music-track-icon i, .video-item .music-track-icon i {
+    color: var(--tropical-yellow);
+    font-size: 1.2rem;
 }
 
 .video-thumbnail i {
@@ -837,25 +842,15 @@ html {
     border-color: var(--tropical-yellow);
 }
 
-.video-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.video-title {
+.music-track-name, .video-item .music-track-name {
     color: var(--cream);
     font-weight: 500;
     font-size: 0.9rem;
     line-height: 1.4;
-    margin-bottom: 0.25rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
-}
-
-.video-subtitle {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.75rem;
-    line-height: 1.2;
+    flex: 1;
+    min-width: 0;
 }
 
 .video-duration {
