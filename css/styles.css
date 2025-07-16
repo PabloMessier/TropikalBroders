@@ -777,47 +777,19 @@ html {
     padding: 0;
 }
 
-.video-item {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0.75rem;
-    margin-bottom: 0.4rem;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    min-height: 40px;
-    position: relative;
-}
 
 
-.video-item:hover {
-    background: rgba(255, 217, 0, 0.1);
-    border-color: var(--tropical-yellow);
-    transform: translateX(5px);
-}
 
 
-.video-item.active {
-    background: rgba(255, 217, 0, 0.2);
-    border-color: var(--tropical-yellow);
-}
 
 
-.video-item.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--tropical-yellow);
-}
 
-.music-track-icon, .video-item .music-track-icon {
-    width: 32px;
-    height: 32px;
+
+
+
+.music-track-icon {
+    width: 28px;
+    height: 28px;
     background: rgba(0, 0, 0, 0.7);
     border-radius: 4px;
     display: flex;
@@ -827,22 +799,27 @@ html {
     flex-shrink: 0;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-.music-track-icon i, .video-item .music-track-icon i {
+.music-track-icon i {
     color: var(--tropical-yellow);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+}
+.music-track-name {
+    color: var(--cream);
+    font-weight: 500;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    flex: 1;
+    min-width: 0;
+    padding-left: 0.1rem;
+    display: flex;
+    align-items: center;
 }
 
-.video-thumbnail i {
-    color: var(--tropical-yellow);
-    font-size: 1.2rem;
-}
 
-.video-item.active .video-thumbnail {
-    background: rgba(255, 217, 0, 0.2);
-    border-color: var(--tropical-yellow);
-}
 
-.music-track-name, .video-item .music-track-name {
+.music-track-name {
     color: var(--cream);
     font-weight: 500;
     font-size: 0.9rem;
@@ -895,23 +872,6 @@ html {
         padding: 1rem;
     }
     
-    .video-item {
-        padding: 0.75rem;
-    }
-    
-    .video-thumbnail {
-        width: 60px;
-        height: 34px;
-        margin-right: 0.75rem;
-    }
-    
-    .video-title {
-        font-size: 0.85rem;
-    }
-    
-    .video-subtitle {
-        font-size: 0.7rem;
-    }
 }
 
 /* Responsive video layout */
